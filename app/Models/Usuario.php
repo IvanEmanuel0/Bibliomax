@@ -14,7 +14,7 @@ class Usuario extends Model
     }
 
     public function empleados() {
-        $this->belongsTo("App\Models\Empleado");
+        $this->hasOne("App\Models\Empleado");
     }
 
 }

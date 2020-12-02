@@ -11,6 +11,6 @@ class Empleado extends Model
 
     public function usuarios()
     {
-        $this->hasOne("App\Models\Usuario");
+        $this->belongsTo("App\Models\Usuario");
     }
 }
