@@ -1,0 +1,48 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background-image: url('../imagenes/fondo.jpg');
+    background-position: center top;
+    background-size: 100%;
+    backdrop-filter: blur(2px);
+}
+
+.fila-login{
+    height: 100vh;
+}
+
+.card-login {
+    background-color: rgba(107, 26, 26, 0.8);
+}
+
+.input-id, .input-pass{
+    background-color: transparent;
+    border: none;
+    border-radius: 0px;
+    border-bottom: rgb(230, 230, 230) 1px solid;
+    color: rgb(230, 230, 230);
+}
+
+.input-id:focus, .input-pass:focus{
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    border-bottom: rgb(230, 230, 230) 1px solid;
+    color: rgb(230, 230, 230);
+}
+
+.input-id::placeholder, .input-pass::placeholder{
+    color: rgba(230, 230, 230, 0.6);
+}
+
+.btn{
+    background-color: rgba(230, 230, 230, 0.8);
+    color: black;
+}
+
+.btn:hover{
+    color: black;
+}
