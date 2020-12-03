@@ -5,28 +5,29 @@
 }
 body{
   font-family: 'Montserrat', sans-serif;
-  background-image: url('../imagenes/fondo-bibliomax.png');
+  background-image: url('../imagenes/fondo-plateado.png');
 }
 .red {
-  background: rgba(127, 26, 26, 0.6);
+  background: rgb(127, 26, 26);
   color: #fff;
 }
+
 .navbar {
   padding: 10px;
 }
-#contenido {
 
-}
 #logo {
   display: inline-block;
   margin-top: 7px;
   color: #fff;
 }
+
 #link {
   color: #fff;
   
   margin: 0 10px;
 }
+
 i { margin: 0 7px; }
 #sidebarCollapse {
   color: #fff;
@@ -51,7 +52,7 @@ i { margin: 0 7px; }
     min-width: 250px;
     max-width: 250px;
     margin-top: 78px;
-    background: rgba(127,26,26,0.6);
+    background: rgb(127, 26, 26);
     color: #fff;
     transition: all 0.3s;
 }
@@ -116,6 +117,43 @@ a[data-toggle="collapse"] {
     transition: all 0.3s;
     margin-top: 70px;
 }
+
+label {
+  color: #fff;
+  font-size: 1.2em;
+}
+
+
+
+.bg-contenido {
+  border: rgb(0,0,0) 2px solid;
+  background-color: rgba(0, 0, 0, 0.733);
+  border-radius: 25px;
+}
+
+.form-group .form-control{
+  color: rgb(255, 255, 255);
+  border: none;
+  background: none;
+  border-radius: 0;
+  border-bottom: 2px solid #ffffff;
+  width: 100%;
+}
+
+option {
+  color: black;
+}
+
+.form-control:focus{
+  border: none;
+  box-shadow: none;
+  box-shadow: 0px 0px 6px rgb(255, 255, 255);
+}   
+
+.btn-registrar{
+  text-transform: uppercase;
+}
+
 @media (max-width:800px) {
   #sidebar {
     margin-left: -250px;}

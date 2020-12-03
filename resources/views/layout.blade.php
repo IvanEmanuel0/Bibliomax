@@ -85,10 +85,10 @@
 					</a>
 					<ul class="collapse list-unstyled" id="libroSubmenu">
 						<li class="nav-item">
-							<a href="#" class="nav-link">Nuevo libro</a>
+							<a href="/libro/create" class="nav-link">Nuevo libro</a>
 						</li>
 						<li class="nav-item">
-							<a href="#" class="nav-link">Lista de libros</a>
+							<a href="/libro" class="nav-link">Lista de libros</a>
 						</li>
 					</ul>
 				</li>

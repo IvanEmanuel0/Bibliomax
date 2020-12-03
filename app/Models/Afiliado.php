@@ -10,7 +10,7 @@ class Afiliado extends Model
     use HasFactory;
 
     public function prestamos() {
-        $this->belongsToMany("App\Models\Prestamo");
+        $this->hasMany("App\Models\Prestamo");
     } 
 
 }

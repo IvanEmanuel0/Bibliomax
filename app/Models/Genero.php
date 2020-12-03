@@ -10,7 +10,7 @@ class Genero extends Model
     use HasFactory;
 
     public function libros() {
-        $this->belongsToMany("App\Models\Libro");
+        $this->hasMany("App\Models\Libro");
     }
 
 }

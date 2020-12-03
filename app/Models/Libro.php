@@ -11,7 +11,7 @@ class Libro extends Model
 
     public function prestamos()
     {
-        $this->belongsToMany("App\Models\Prestamo");
+        $this->hasMany("App\Models\Prestamo");
     }
 
     public function autors()
@@ -19,9 +19,9 @@ class Libro extends Model
         $this->belongsToMany("App\Models\Autor");
     }
 
-    public function generos()
+    public function genero()
     {
-        $this->hasOne("App\Models\Genero");
+        $this->belongsTo("App\Models\Genero");
     }
 
 }

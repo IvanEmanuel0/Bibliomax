@@ -11,12 +11,12 @@ class Prestamo extends Model
 
     public function afiliados()
     {
-        $this->hasOne("App\Models\Afiliado");
+        $this->belongsTo("App\Models\Afiliado");
     }
 
     public function libros()
     {
-        $this->hasOne("App\Models\Libro");
+        $this->belongsTo("App\Models\Libro");
     }
 
 }
