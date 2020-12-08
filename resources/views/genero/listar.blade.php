@@ -6,7 +6,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12 d-flex justify-content-center">
-                <h1>Lista de géneross</h1>
+                <h1>Lista de géneros</h1>
             </div>
             
             <div class="col-12 bg-contenido">

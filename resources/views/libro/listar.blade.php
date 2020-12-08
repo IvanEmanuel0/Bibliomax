@@ -30,7 +30,6 @@
                             <td>{{$libro->autor_id}}</td>
                             <td>{{$libro->editorial_id}}</td>
                             <td>{{$libro->genero_id}}</td>
-                            
                             <td>{{$libro->año}}</td>
                             <td>
                               <a href="{{route('libro.edit', ['libro'=>$libro->id])}}"><i class="far fa-edit"></i></a>
