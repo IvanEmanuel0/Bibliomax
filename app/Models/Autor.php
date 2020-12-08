@@ -9,8 +9,9 @@ class Autor extends Model
 {
     use HasFactory;
 
-    public function libros() {
-        $this->belongsToMany("App\Models\Libro");
+    public function libros()
+    {
+        return $this->belongsToMany("App\Models\Libro");
     }
 
 }

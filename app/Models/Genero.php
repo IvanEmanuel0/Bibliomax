@@ -9,8 +9,9 @@ class Genero extends Model
 {
     use HasFactory;
 
-    public function libros() {
-        $this->hasMany("App\Models\Libro");
+    public function libros()
+    {
+        return $this->hasMany("App\Models\libro");
     }
 
 }

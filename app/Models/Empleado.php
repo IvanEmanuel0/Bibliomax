@@ -9,8 +9,9 @@ class Empleado extends Model
 {
     use HasFactory;
 
-    public function usuarios()
+    public function usuario()
     {
-        $this->belongsTo("App\Models\Usuario");
+        return $this->belongsTo('App\Models\Usuario');
     }
+
 }

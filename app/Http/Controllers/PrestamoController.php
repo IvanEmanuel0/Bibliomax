@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Genero;
+use App\Models\Prestamo;
 use Illuminate\Http\Request;
 
 class PrestamoController extends Controller
@@ -41,10 +41,10 @@ class PrestamoController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Genero  $genero
+     * @param  \App\Models\Prestamo  $prestamo
      * @return \Illuminate\Http\Response
      */
-    public function show(Genero $genero)
+    public function show(Prestamo $prestamo)
     {
         //
     }
@@ -52,10 +52,10 @@ class PrestamoController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Genero  $genero
+     * @param  \App\Models\Prestamo  $prestamo
      * @return \Illuminate\Http\Response
      */
-    public function edit(Genero $genero)
+    public function edit(Prestamo $prestamo)
     {
         //
     }
@@ -64,10 +64,10 @@ class PrestamoController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Genero  $genero
+     * @param  \App\Models\Prestamo  $prestamo
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Genero $genero)
+    public function update(Request $request, Prestamo $prestamo)
     {
         //
     }
@@ -75,10 +75,10 @@ class PrestamoController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Genero  $genero
+     * @param  \App\Models\Prestamo  $prestamo
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Genero $genero)
+    public function destroy(Prestamo $prestamo)
     {
         //
     }

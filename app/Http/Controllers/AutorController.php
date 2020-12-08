@@ -14,7 +14,11 @@ class AutorController extends Controller
      */
     public function index()
     {
-        //
+        $autores = Autor::all();
+        return view("autor.listar", 
+        [
+            "autores" => $autores
+        ]);
     }
 
     /**
@@ -24,7 +28,8 @@ class AutorController extends Controller
      */
     public function create()
     {
-        //
+        return view("autor.nuevo");
+
     }
 
     /**
@@ -35,7 +40,13 @@ class AutorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $autor = new Autor();
+        $autor->nombre = $request->nombre;
+        $autor->apellido = $request->apellido;
+
+        $autor->save();
+
+        return redirect()->route("autor.index");
     }
 
     /**
@@ -46,7 +57,7 @@ class AutorController extends Controller
      */
     public function show(Autor $autor)
     {
-        //
+        return view("autor.mostrar", ["autor" => $autor]);
     }
 
     /**
@@ -57,7 +68,7 @@ class AutorController extends Controller
      */
     public function edit(Autor $autor)
     {
-        //
+        return view("autor.editar", ["autor" => $autor]);
     }
 
     /**
@@ -69,7 +80,12 @@ class AutorController extends Controller
      */
     public function update(Request $request, Autor $autor)
     {
-        //
+        $autor->nombre = $request->nombre;
+        $autor->apellido = $request->apellido;
+
+        $autor->save();
+
+        return redirect()->route("autor.index");
     }
 
     /**
@@ -80,6 +96,8 @@ class AutorController extends Controller
      */
     public function destroy(Autor $autor)
     {
-        //
+        $autor->delete();
+
+        return redirect()->route("autor.index");  
     }
 }

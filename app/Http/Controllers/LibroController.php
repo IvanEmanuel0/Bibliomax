@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Libro;
+use App\Models\Autor;
+use App\Models\Genero;
+use App\Models\Editorial;
 use Illuminate\Http\Request;
 
 class LibroController extends Controller
@@ -14,7 +17,19 @@ class LibroController extends Controller
      */
     public function index()
     {
-        return view('libro-listar');
+        $libros = Libro::all();
+        $editoriales = Editorial::all();
+        $generos = Genero::all();
+        $autores = Autor::all();
+
+        return view('libro.listar',
+        [
+            "libros"=>$libros,
+            "editoriales"=>$editoriales,
+            "generos"=>$generos,
+            "autores"=>$autores
+        ]
+    );
     }
 
     /**
@@ -24,7 +39,15 @@ class LibroController extends Controller
      */
     public function create()
     {
-        return view('libro-nuevo');
+        $autores = Autor::all();
+        $generos = Genero::all();
+        $editoriales = Editorial::all();
+        return view('libro.nuevo', 
+        [
+            "autores" => $autores,
+            "generos"=> $generos,
+            "editoriales"=> $editoriales
+        ]);
     }
 
     /**
@@ -35,7 +58,18 @@ class LibroController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $libro = new Libro();
+
+        $libro->titulo = $request->titulo;
+        $libro->isbn = $request->isbn;
+        $libro->año = $request->año;
+        $libro->autor_id = $request->autor_id;
+        $libro->genero_id = $request->genero_id;
+        $libro->editorial_id = $request->editorial_id;
+
+        $libro->save();
+
+        return redirect()->route("libro.index");
     }
 
     /**

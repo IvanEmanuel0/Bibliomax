@@ -5,13 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Rango extends Model
+class Editorial extends Model
 {
     use HasFactory;
 
-    public function usuarios()
+    public function libros()
     {
-        return $this->hasMany('App\Models\Usuario');
+        return $this->hasMany('App\Models\Libro');
     }
 
 }

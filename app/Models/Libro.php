@@ -11,17 +11,24 @@ class Libro extends Model
 
     public function prestamos()
     {
-        $this->hasMany("App\Models\Prestamo");
+        return $this->hasMany('App\Models\Prestamo');
     }
 
+    public function editorial()
+    {
+        return $this->belongsTo('App\Models\Editorial');
+    }
+    
     public function autors()
     {
-        $this->belongsToMany("App\Models\Autor");
+        return $this->belongsToMany('App\Models\Autor');
     }
 
     public function genero()
     {
-        $this->belongsTo("App\Models\Genero");
+        return $this->belongsTo('App\Models\Genero');
     }
+
+    
 
 }

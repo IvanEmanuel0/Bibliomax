@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAfiliadosTable extends Migration
+class CreateAutorsLibrosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,16 @@ class CreateAfiliadosTable extends Migration
      */
     public function up()
     {
-        Schema::create('afiliados', function (Blueprint $table) {
+        Schema::create('autors_libros', function (Blueprint $table) {
             $table->id();
-            $table->string("nombre", 45);
-            $table->string("apellido", 45);
-            $table->string("dni", 45);
-            $table->string("direccion", 45);
-            $table->string("correo", 45);
-            $table->string("telefono", 45);
+            $table->unsignedBigInteger("autor_id");
+            $table->unsignedBigInteger("libro_id");
 
             $table->timestamps();
+
+            $table->foreign("autor_id")->references("id")->on("autors");
+            $table->foreign("libro_id")->references("id")->on("libros");
+
         });
     }
 
@@ -33,6 +33,6 @@ class CreateAfiliadosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('afiliados');
+        Schema::dropIfExists('autors_libros');
     }
 }

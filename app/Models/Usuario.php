@@ -9,12 +9,15 @@ class Usuario extends Model
 {
     use HasFactory;
 
-    public function rangos(){
-        $this->hasOne("App\Models\Rango");
+    public function rango()
+    {
+        return $this->belongTo('App\Models\Rango');
     }
 
-    public function empleados() {
-        $this->hasOne("App\Models\Empleado");
+    public function empleado()
+    {
+        return $this->hasOne('App\Models\Empleado');
     }
+
 
 }

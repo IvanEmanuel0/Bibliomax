@@ -9,8 +9,9 @@ class Afiliado extends Model
 {
     use HasFactory;
 
-    public function prestamos() {
-        $this->hasMany("App\Models\Prestamo");
-    } 
+    public function prestamos()
+    {
+        return $this->hasMany('App\Models\Prestamo');
+    }
 
 }

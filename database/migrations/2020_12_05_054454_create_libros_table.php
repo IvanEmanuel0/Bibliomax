@@ -16,13 +16,18 @@ class CreateLibrosTable extends Migration
         Schema::create('libros', function (Blueprint $table) {
             $table->id();
             $table->string("titulo", 45);
-            $table->string("año", 4);
             $table->string("isbn", 13)->unique();
-            $table->string("editorial", 45);
+            $table->string("año", 4);
+            
+            $table->unsignedBigInteger("editorial_id");
             $table->unsignedBigInteger("genero_id");
+
             $table->timestamps();
 
+            
+            $table->foreign("editorial_id")->references("id")->on("editorials");
             $table->foreign("genero_id")->references("id")->on("generos");
+
         });
     }
 

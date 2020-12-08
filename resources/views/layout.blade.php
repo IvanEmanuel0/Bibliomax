@@ -59,10 +59,10 @@
 					</a>
 					<ul class="collapse list-unstyled" id="afiliadoSubmenu">
 						<li class="nav-item">
-							<a href="#" class="nav-link">Nuevo afiliado</a>
+							<a href="{{route("afiliado.create")}}" class="nav-link">Nuevo afiliado</a>
 						</li>
 						<li class="nav-item">
-							<a href="#" class="nav-link">Lista de afiliados</a>
+							<a href="{{route("afiliado.index")}}" class="nav-link">Lista de afiliados</a>
 						</li>
 					</ul>
 				</li>
@@ -72,10 +72,10 @@
 					</a>
 					<ul class="collapse list-unstyled" id="prestamoSubmenu">
 						<li class="nav-item">
-							<a href="#" class="nav-link">Nuevo préstamo</a>
+							<a href="{{route("prestamo.create")}}" class="nav-link">Nuevo préstamo</a>
 						</li>
 						<li class="nav-item">
-							<a href="#" class="nav-link">Lista de préstamos</a>
+							<a href="{{route("prestamo.index")}}" class="nav-link">Lista de préstamos</a>
 						</li>
 					</ul>
 				</li>
@@ -85,11 +85,21 @@
 					</a>
 					<ul class="collapse list-unstyled" id="libroSubmenu">
 						<li class="nav-item">
-							<a href="/libro/create" class="nav-link">Nuevo libro</a>
+							<a href="{{route("libro.create")}}" class="nav-link">Nuevo libro</a>
 						</li>
 						<li class="nav-item">
-							<a href="/libro" class="nav-link">Lista de libros</a>
+							<a href="{{route("libro.index")}}" class="nav-link">Lista de libros</a>
 						</li>
+						<li class="nav-item">
+							<a href="{{route("autor.index")}}" class="nav-link">Lista de autores</a>
+						</li>
+						<li class="nav-item">
+							<a href="{{route("editorial.index")}}" class="nav-link">Lista de editoriales</a>
+						</li>
+						<li class="nav-item">
+							<a href="{{route("genero.index")}}" class="nav-link">Lista de generos</a>
+						</li>
+
 					</ul>
 				</li>
 				<li class="nav-item">
@@ -98,10 +108,10 @@
 					</a>
 					<ul class="collapse list-unstyled" id="empleadoSubmenu">
 						<li class="nav-item">
-							<a href="#" class="nav-link">Nuevo empleado</a>
+							<a href="{{route("empleado.create")}}" class="nav-link">Nuevo empleado</a>
 						</li>
 						<li class="nav-item">
-							<a href="#" class="nav-link">Lista de empleados </a>
+							<a href="{{route("empleado.index")}}" class="nav-link">Lista de empleados </a>
 						</li>
 					</ul>
 				</li>

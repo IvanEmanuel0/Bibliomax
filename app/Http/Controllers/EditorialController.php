@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Genero;
+use App\Models\Editorial;
 use Illuminate\Http\Request;
 
-class GeneroController extends Controller
+class EditorialController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,10 +14,12 @@ class GeneroController extends Controller
      */
     public function index()
     {
-        $generos = Genero::all();
-        return view("genero.listar",
+
+        $editoriales = Editorial::all();
+
+        return view('editorial.listar',
         [
-            "generos" => $generos
+            'editoriales' => $editoriales
         ]
     );
     }
@@ -29,7 +31,7 @@ class GeneroController extends Controller
      */
     public function create()
     {
-        return view("genero.nuevo");
+        return view('editorial.nuevo');
     }
 
     /**
@@ -40,61 +42,61 @@ class GeneroController extends Controller
      */
     public function store(Request $request)
     {
-        $genero = new Genero();
-        $genero->nombre = $request->nombre;
+        $editorial = new Editorial();
+        $editorial->nombre = $request->nombre;
+        
 
-        $genero->save();
-
-        return redirect()->route("genero.index");
+        $editorial->save();
+        return redirect()->route('editorial.index');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Genero  $genero
+     * @param  \App\Models\Editorial  $editorial
      * @return \Illuminate\Http\Response
      */
-    public function show(Genero $genero)
+    public function show(Editorial $editorial)
     {
-        return view('genero.mostrar', ["genero" => $genero]);
+        return view('editorial.mostar', ["editorial" => $editorial]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Genero  $genero
+     * @param  \App\Models\Editorial  $editorial
      * @return \Illuminate\Http\Response
      */
-    public function edit(Genero $genero)
+    public function edit(Editorial $editorial)
     {
-        return view('genero.editar', ["genero" => $genero]);
+        return view('editorial.editar', ["editorial" => $editorial]);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Genero  $genero
+     * @param  \App\Models\Editorial  $editorial
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Genero $genero)
+    public function update(Request $request, Editorial $editorial)
     {
-        $genero->nombre = $request->nombre;
-        $genero->save();
 
-        return redirect()->route("genero.index");
+        $editorial->nombre = $request->nombre;
+
+        $editorial->save();
+        return redirect()->route('editorial.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Genero  $genero
+     * @param  \App\Models\Editorial  $editorial
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Genero $genero)
+    public function destroy(Editorial $editorial)
     {
-        $genero->delete();
-
-        return redirect()->route("genero.index");
+        $editorial->delete();
+        return redirect()->route('editorial.index');
     }
 }

@@ -9,14 +9,14 @@ class Prestamo extends Model
 {
     use HasFactory;
 
-    public function afiliados()
+    public function libro()
     {
-        $this->belongsTo("App\Models\Afiliado");
+        return $this->belongsTo('App\Models\Libro');
     }
 
-    public function libros()
+    public function afiliado()
     {
-        $this->belongsTo("App\Models\Libro");
+        return $this->belongsTo('App\Models\Afiliado');
     }
 
 }
