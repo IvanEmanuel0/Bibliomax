@@ -80,7 +80,18 @@ class LibroController extends Controller
      */
     public function show(Libro $libro)
     {
-        //
+        $autores = Autor::all();
+        $generos = Genero::all();
+        $editoriales = Editorial::all();
+
+        return view('libro.mostrar', 
+        [
+            "libro" => $libro,
+            "autores" => $autores,
+            "generos"=> $generos,
+            "editoriales"=> $editoriales
+        ]
+        );
     }
 
     /**
@@ -91,7 +102,18 @@ class LibroController extends Controller
      */
     public function edit(Libro $libro)
     {
-        //
+        $autores = Autor::all();
+        $generos = Genero::all();
+        $editoriales = Editorial::all();
+
+        return view('libro.editar', 
+        [
+            "libro" => $libro,
+            "autores" => $autores,
+            "generos"=> $generos,
+            "editoriales"=> $editoriales
+        ]
+        );
     }
 
     /**
@@ -103,7 +125,16 @@ class LibroController extends Controller
      */
     public function update(Request $request, Libro $libro)
     {
-        //
+        $libro->titulo = $request->titulo;
+        $libro->isbn = $request->isbn;
+        $libro->año = $request->año;
+        $libro->autor_id = $request->autor_id;
+        $libro->genero_id = $request->genero_id;
+        $libro->editorial_id = $request->editorial_id;
+
+        $libro->save();
+        
+        return redirect()->route("libro.index");
     }
 
     /**
@@ -114,6 +145,8 @@ class LibroController extends Controller
      */
     public function destroy(Libro $libro)
     {
-        //
+        $libro->delete();
+
+        return view("libro.index");
     }
 }

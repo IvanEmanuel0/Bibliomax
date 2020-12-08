@@ -27,9 +27,10 @@
                           <tr>
                             <td>{{$libro->titulo}}</td>
                             <td>{{$libro->isbn}}</td>
-                            <td>{{$autores[$libro->autor_id]->nombre}} {{$autores[$libro->autor_id]->apellido}}</td>
-                            <td>{{$editoriales[$libro->editorial_id]->nombre}}</td>
-                            <td>{{$generos[$libro->genero_id]->nombre}}</td>
+                            <td>{{$libro->autor_id}}</td>
+                            <td>{{$libro->editorial_id}}</td>
+                            <td>{{$libro->genero_id}}</td>
+                            
                             <td>{{$libro->año}}</td>
                             <td>
                               <a href="{{route('libro.edit', ['libro'=>$libro->id])}}"><i class="far fa-edit"></i></a>
