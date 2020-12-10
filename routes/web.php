@@ -22,9 +22,11 @@ use App\Http\Controllers\PrestamoController;
 |
 */
 
+Route::get('/', function (){
+    return view('welcome');
+});
 
-
-Route::resource("libro", LibroController::class);
+Route::resource('libro', LibroController::class);
 Route::resource('editorial', EditorialController::class);
 Route::resource('genero', GeneroController::class);
 Route::resource('afiliado', AfiliadoController::class);

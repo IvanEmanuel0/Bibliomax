@@ -69,6 +69,11 @@ class LibroController extends Controller
 
         $libro->save();
 
+        $libro = Libro::find($libro->id);
+        $libro->autors()->attach($libro->autor_id);
+
+        $libro->save();
+
         return redirect()->route("libro.index");
     }
 
@@ -145,6 +150,7 @@ class LibroController extends Controller
      */
     public function destroy(Libro $libro)
     {
+        $libro->autors()->detach($libro->autor_id);
         $libro->delete();
 
         return view("libro.index");
